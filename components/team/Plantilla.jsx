@@ -68,26 +68,100 @@ export default function Plantilla({ plantillas }) {
 		setSelectedPlantilla(null);
 	};
 
+	const goalkeeper = plantillas.filter((p) => p.role === '1');
+	const defenders = plantillas.filter((p) => p.role === '2');
+	const midfielders = plantillas.filter((p) => p.role === '3');
+	const attackers = plantillas.filter((p) => p.role === '4');
+
 	return (
-		<div className='w-full flex justify-center'>
-			<div className=' grid grid-cols-4 gap-8 p-3'>
-				{plantillas.map((plantilla) => (
-					<div
-						key={plantilla.id}
-						className='border shadow-md p-1'
-						onClick={() => handleImageClick(plantilla)}
-					>
-						<div className=''>{plantilla.nick}</div>
-						<div className='text-xs'>{plantilla.CountryCode}</div>
-						<Image
-							src={plantilla.image}
-							alt={plantilla.nick}
-							title={plantilla.nick}
-							width={50}
-							height={50}
-						/>
-					</div>
-				))}
+		<div className='w-full '>
+			<div>
+				<h1>Goalkeepers</h1>
+				<div className=' grid grid-cols-4 gap-8 p-3'>
+					{goalkeeper.map((plantilla) => (
+						<div
+							key={plantilla.id}
+							className='border shadow-md p-1'
+							onClick={() => handleImageClick(plantilla)}
+						>
+							<div className=''>{plantilla.nick}</div>
+							<div className='text-xs'>{plantilla.CountryCode}</div>
+							<Image
+								src={plantilla.image}
+								alt={plantilla.nick}
+								title={plantilla.nick}
+								width={50}
+								height={50}
+							/>
+						</div>
+					))}
+				</div>
+			</div>
+			<div>
+				<h1>Defenders</h1>
+				<div className=' grid grid-cols-4 gap-8 p-3'>
+					{defenders.map((plantilla) => (
+						<div
+							key={plantilla.id}
+							className='border shadow-md p-1'
+							onClick={() => handleImageClick(plantilla)}
+						>
+							<div className=''>{plantilla.nick}</div>
+							<div className='text-xs'>{plantilla.CountryCode}</div>
+							<Image
+								src={plantilla.image}
+								alt={plantilla.nick}
+								title={plantilla.nick}
+								width={50}
+								height={50}
+							/>
+						</div>
+					))}
+				</div>
+			</div>
+			<div>
+				<h1>Midfielders</h1>
+				<div className=' grid grid-cols-4 gap-8 p-3'>
+					{midfielders.map((plantilla) => (
+						<div
+							key={plantilla.id}
+							className='border shadow-md p-1'
+							onClick={() => handleImageClick(plantilla)}
+						>
+							<div className=''>{plantilla.nick}</div>
+							<div className='text-xs'>{plantilla.CountryCode}</div>
+							<Image
+								src={plantilla.image}
+								alt={plantilla.nick}
+								title={plantilla.nick}
+								width={50}
+								height={50}
+							/>
+						</div>
+					))}
+				</div>
+			</div>
+			<div>
+				<h1>Attackers</h1>
+				<div className=' grid grid-cols-4 gap-8 p-3'>
+					{attackers.map((plantilla) => (
+						<div
+							key={plantilla.id}
+							className='border shadow-md p-1'
+							onClick={() => handleImageClick(plantilla)}
+						>
+							<div className=''>{plantilla.nick}</div>
+							<div className='text-xs'>{plantilla.CountryCode}</div>
+							<Image
+								src={plantilla.image}
+								alt={plantilla.nick}
+								title={plantilla.nick}
+								width={50}
+								height={50}
+							/>
+						</div>
+					))}
+				</div>
 			</div>
 			{/* Conditionally render the Modal when selectedPlantilla is not null */}
 			{selectedPlantilla && (
